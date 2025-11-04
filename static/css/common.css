@@ -1,0 +1,201 @@
+﻿.action-sheet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 10;
+  padding: 24px;
+  padding-top: 42px;
+  box-sizing: border-box;
+  animation-duration: 0.3s;
+  animation-name: slide-down-out;
+  animation-fill-mode: forwards;
+  overflow-y: auto;
+}
+.action-sheet.show {
+  display: block;
+  animation-duration: 0.3s;
+  animation-name: slide-up-in;
+}
+.action-sheet-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 22px;
+  color: #CCC;
+}
+@keyframes slide-up-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide-down-out {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+    display: none;
+  }
+}
+
+.page-bottom-logo {
+  padding-top: 40px;
+  padding-bottom: 24px;
+  text-align: center;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #cccccc;
+  width: 100%;
+}
+.page-bottom-logo a {
+  color: #cccccc;
+}
+.page-bottom-logo img {
+  width: 220px;
+  max-width: 100%;
+}
+
+.login-page {
+  margin-top: 22px;
+}
+.login-page .cutdown-btn {
+  width: 100%;
+}
+.login-page .ant-input {
+  height: 38px;
+  font-size: 14px;
+}
+.login-page .ant-btn {
+  height: 38px;
+  font-size: 14px;
+}
+.login-title {
+  font-size: 24px;
+  margin-bottom: 28px;
+}
+.login-field {
+  margin-bottom: 16px;
+}
+.login-footer {
+  margin-top: 64px;
+  text-align: center;
+}
+.login-footer .submit-btn {
+  width: 100%;
+}
+.login-footer .ant-btn {
+  height: 38px;
+  font-size: 14px;
+}
+
+.register-page {
+  margin-top: 22px;
+  min-height: 300px;
+}
+.register-title {
+  font-size: 24px;
+  margin-bottom: 28px;
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+.register-footer {
+  text-align: center;
+  margin-top: 64px;
+}
+.register-footer .submit-btn {
+  width: 100%;
+  height: 38px;
+}
+.register-page-m #clForm > div {
+  padding: 10px !important;
+}
+.select .option-label {
+  line-height: 1.2;
+}
+
+.hot-recommends {
+  padding: 24px 20px;
+  margin-bottom: 24px;
+  background-color: #fff;
+}
+.hot-recommends-title {
+  font-size: 16px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  color: #262626;
+  margin-bottom: 20px;
+}
+.hot-recommends-list {
+  margin-bottom: 0;
+}
+.hot-recommends-list-item {
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.hot-recommends-list-item:nth-last-child(1) {
+  margin-bottom: 0;
+}
+.hot-recommends-list-item a {
+  font-size: 14px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  color: #262626;
+}
+.hot-recommends-list-item::before {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 4px;
+  background: #ffdb41;
+}
+
+.login-modal .ant-modal-header {
+  padding: 20px 40px;
+}
+.login-modal .ant-modal-body {
+  padding: 40px;
+}
+.login-modal .cutdown-btn {
+  width: 100%;
+}
+.login-modal .submit-btn {
+  width: 100%;
+}
+.login-modal .ant-input {
+  height: 38px;
+  font-size: 14px;
+}
+.login-modal .ant-btn {
+  height: 38px;
+  font-size: 14px;
+}
+
+.register-modal .ant-modal-header {
+  padding: 20px 40px;
+}
+.register-modal .ant-modal-body {
+  padding: 20px 40px  40px;
+}
+.register-modal .submit-btn {
+  width: 100%;
+  height: 38px;
+}
+
+.img-container-logo {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  content-visibility: auto;
+}
+
