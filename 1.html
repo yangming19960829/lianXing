@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEWH TECHS PTE. LTD. | Search Arbitrage & Cross-border E-commerce</title>
+    <title>Contact Form Modal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #4f46e5;
             --primary-light: #818cf8;
-            --primary-dark: #3730a3;
             --secondary: #06b6d4;
-            --light: #f8fafc;
-            --light-transparent: rgba(248, 250, 252, 0.8);
-            --light-semi: rgba(248, 250, 252, 0.6);
             --gradient: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
-            --gradient-light: linear-gradient(135deg, #818cf8 0%, #22d3ee 100%);
         }
         
         * {
@@ -27,793 +22,349 @@
         }
         
         body {
-            background-color: #f0f4f8;
-            color: #334155;
-            overflow-x: hidden;
-        }
-        
-        /* Navigation */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .nav-link {
-            color: #475569 !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary) !important;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.8)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            justify-content: center;
+            padding: 20px;
         }
         
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, #4f46e5, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            color: #64748b;
-            max-width: 600px;
-        }
-        
-        .btn-primary-custom {
+        .contact-btn {
             background: var(--gradient);
             border: none;
-            padding: 0.75rem 2rem;
+            padding: 15px 40px;
             border-radius: 50px;
+            font-size: 1.2rem;
             font-weight: 600;
             color: white;
+            cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
         }
         
-        .btn-primary-custom:hover {
+        .contact-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
-            color: white;
+            box-shadow: 0 12px 35px rgba(79, 70, 229, 0.4);
         }
         
-        /* Glass Morphism Effect */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(79, 70, 229, 0.08);
-            backdrop-filter: blur(5px);
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .floating-element:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .floating-element:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-        
-        .floating-element:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-        
-        /* Sections */
-        .section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            color: #1e293b;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-        
-        /* Services Section */
-        .services-section {
-            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.8)), 
-                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        
-        .service-card {
-            padding: 2.5rem 2rem;
-            height: 100%;
-            text-align: center;
-        }
-        
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* About Section */
-        .about-section {
-            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.8)), 
-                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        
-        /* Company Images */
-        .company-image {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-        }
-        
-        .company-image:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .company-image img {
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
         }
         
-        .company-image:hover img {
-            transform: scale(1.05);
+        .modal-overlay.active {
+            display: flex;
         }
         
-        .image-caption {
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            font-weight: 600;
-            color: #475569;
+        .contact-modal {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            animation: modalSlideIn 0.3s ease-out;
         }
         
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(rgba(79, 70, 229, 0.85), rgba(6, 182, 212, 0.8)), 
-                        url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .modal-header {
+            background: var(--gradient);
             color: white;
+            padding: 25px 30px;
+            position: relative;
         }
         
-        .stat-item {
-            text-align: center;
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
         }
         
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
         }
         
-        .stat-label {
-            font-size: 1.1rem;
-            font-weight: 500;
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
         }
         
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.8)), 
-                        url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        .modal-body {
+            padding: 30px;
         }
         
-        .contact-form {
-            padding: 2.5rem;
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
         }
         
         .form-control {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            color: #334155;
-            padding: 0.75rem 1rem;
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
             border-radius: 10px;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(5px);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f9fafb;
         }
         
         .form-control:focus {
-            background: rgba(255, 255, 255, 0.95);
+            outline: none;
             border-color: var(--primary-light);
-            box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.15);
-            color: #334155;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
         }
         
-        /* Contact Info */
-        .contact-info {
-            padding: 2rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-icon {
+        .submit-btn {
+            width: 100%;
             background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            margin-top: 0.25rem;
-        }
-        
-        /* Footer */
-        .footer {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.85)), 
-                        url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80');
-            background-size: cover;
-            background-position: center;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: white;
-            padding: 3rem 0 1.5rem;
-        }
-        
-        .footer-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-light);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.75rem;
+            cursor: pointer;
             transition: all 0.3s ease;
+            margin-top: 10px;
         }
         
-        .footer-links a:hover {
-            color: white;
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
         }
         
-        .footer-links p {
-            color: #cbd5e1;
-            margin-bottom: 0.5rem;
+        .submit-btn:active {
+            transform: translateY(0);
         }
         
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-            margin-right: 1rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px 30px;
         }
         
-        .social-icons a:hover {
-            background: var(--gradient);
-            transform: translateY(-3px);
-            color: white;
+        .success-icon {
+            font-size: 4rem;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+        
+        .success-message h3 {
+            color: #065f46;
+            margin-bottom: 10px;
+        }
+        
+        .success-message p {
+            color: #6b7280;
+            margin-bottom: 20px;
         }
         
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-            
-            .section {
-                padding: 80px 0;
-            }
-            
-            .company-image img {
-                height: 200px;
-            }
-        }
-        
         @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
+            .contact-modal {
+                margin: 10px;
             }
             
-            .section {
-                padding: 60px 0;
+            .modal-header {
+                padding: 20px 25px;
             }
             
-            /* Disable fixed background on mobile for better performance */
-            .hero-section,
-            .services-section,
-            .about-section,
-            .stats-section,
-            .contact-section {
-                background-attachment: scroll !important;
+            .modal-body {
+                padding: 25px;
             }
             
-            .company-image img {
-                height: 180px;
+            .modal-title {
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">WEWH TECHS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#stats">Stats</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Contact Button -->
+    <button class="contact-btn" onclick="openModal()">
+        <i class="fas fa-envelope me-2"></i>Contact Us
+    </button>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        
-        <div class="container hero-content">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="hero-title">Revolutionizing Search Arbitrage & E-commerce</h1>
-                    <p class="hero-subtitle">WEWH TECHS leverages cutting-edge technology to identify market opportunities and optimize cross-border e-commerce operations for maximum profitability.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#services" class="btn btn-primary-custom">Our Services</a>
-                        <a href="#contact" class="btn btn-outline-primary">Get In Touch</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="mt-5 mt-lg-0">
-                        <div class="glass-card service-card d-inline-block">
-                            <i class="fas fa-chart-line service-icon"></i>
-                            <h4>Data-Driven Insights</h4>
-                            <p>Advanced analytics for market opportunities</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section services-section">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="glass-card service-card">
-                        <i class="fas fa-search-dollar service-icon"></i>
-                        <h4>Search Arbitrage</h4>
-                        <p>Identify and capitalize on pricing discrepancies across search platforms and marketplaces to generate consistent profits.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="glass-card service-card">
-                        <i class="fas fa-globe-americas service-icon"></i>
-                        <h4>Cross-border E-commerce</h4>
-                        <p>Expand your business globally with our optimized international e-commerce solutions and logistics management.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="glass-card service-card">
-                        <i class="fas fa-robot service-icon"></i>
-                        <h4>AI-Powered Analytics</h4>
-                        <p>Leverage machine learning algorithms to predict market trends and identify profitable opportunities in real-time.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="glass-card service-card">
-                        <i class="fas fa-box-open service-icon"></i>
-                        <h4>Supply Chain Optimization</h4>
-                        <p>Streamline your inventory management and fulfillment processes with our integrated supply chain solutions.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="glass-card service-card">
-                        <i class="fas fa-ad service-icon"></i>
-                        <h4>Digital Marketing</h4>
-                        <p>Maximize your online presence with targeted advertising campaigns and SEO-optimized product listings.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="glass-card service-card">
-                        <i class="fas fa-shield-alt service-icon"></i>
-                        <h4>Risk Management</h4>
-                        <p>Protect your investments with our comprehensive risk assessment and mitigation strategies.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-title">About WEWH TECHS</h2>
-            
-            <!-- Company Images Row -->
-            <div class="row mb-5">
-                <div class="col-md-6">
-                    <div class="company-image">
-                        <img src="img/ad-job-inhouse.webp" alt="Team Meeting">
-                        <div class="image-caption">Strategic Planning Session</div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="company-image">
-                        <img src="img/4d59df18aeb95ef06d6443f9deff522a.jpeg" alt="Team Building">
-                        <div class="image-caption">Team Building Activities</div>
-                    </div>
-                </div>
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="contact-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Get In Touch</h3>
+                <button class="close-btn" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
             
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="glass-card p-4">
-                        <h3 class="mb-4">Driving Innovation in Digital Commerce</h3>
-                        <p class="mb-4">WEWH TECHS PTE. LTD. is a Singapore-based technology company specializing in search arbitrage and cross-border e-commerce solutions. Our team of data scientists, e-commerce experts, and software engineers work together to develop cutting-edge tools that identify and capitalize on market inefficiencies.</p>
-                        <p class="mb-4">With a focus on automation and scalability, we help businesses of all sizes expand their reach and maximize profitability in the global marketplace. Our proprietary algorithms analyze millions of data points daily to uncover hidden opportunities.</p>
-                        <div class="d-flex flex-wrap gap-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-check-circle text-primary me-2"></i>
-                                <span>Data-Driven Decision Making</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-check-circle text-primary me-2"></i>
-                                <span>Global Market Expertise</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-check-circle text-primary me-2"></i>
-                                <span>Advanced Technology Stack</span>
-                            </div>
-                        </div>
+            <div class="modal-body">
+                <!-- Contact Form -->
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">
+                            <i class="fas fa-user me-2"></i>Full Name *
+                        </label>
+                        <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your full name">
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 mt-5 mt-lg-0">
-                        <h3 class="mb-4">Why Choose Us</h3>
-                        <div class="row text-center">
-                            <div class="col-6 mb-4">
-                                <h2 class="text-primary">50+</h2>
-                                <p>Global Markets</p>
-                            </div>
-                            <div class="col-6 mb-4">
-                                <h2 class="text-primary">10M+</h2>
-                                <p>Products Analyzed</p>
-                            </div>
-                            <div class="col-6">
-                                <h2 class="text-primary">24/7</h2>
-                                <p>Monitoring</p>
-                            </div>
-                            <div class="col-6">
-                                <h2 class="text-primary">99.9%</h2>
-                                <p>Uptime</p>
-                            </div>
-                        </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="phone">
+                            <i class="fas fa-phone me-2"></i>Phone Number *
+                        </label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Enter your phone number">
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats" class="section stats-section">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3 col-6 mb-4 mb-md-0">
-                    <div class="stat-item">
-                        <h3 class="stat-number">$50M+</h3>
-                        <p class="stat-label">Annual Revenue Generated</p>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">
+                            <i class="fas fa-envelope me-2"></i>Email Address *
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email address">
                     </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4 mb-md-0">
-                    <div class="stat-item">
-                        <h3 class="stat-number">150+</h3>
-                        <p class="stat-label">Client Partnerships</p>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="company">
+                            <i class="fas fa-building me-2"></i>Company Name
+                        </label>
+                        <input type="text" class="form-control" id="company" name="company" placeholder="Enter your company name">
                     </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-item">
-                        <h3 class="stat-number">5</h3>
-                        <p class="stat-label">Years of Excellence</p>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="address">
+                            <i class="fas fa-map-marker-alt me-2"></i>Company Address
+                        </label>
+                        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter your company address"></textarea>
                     </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-item">
-                        <h3 class="stat-number">15+</h3>
-                        <p class="stat-label">Countries Served</p>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                    </button>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully. We'll get back to you soon.</p>
+                    <button class="submit-btn" onclick="closeModal()">
+                        Close
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="glass-card contact-form">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <input type="text" class="form-control" placeholder="Your Name" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <input type="email" class="form-control" placeholder="Your Email" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" placeholder="Subject" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary-custom w-100">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="glass-card contact-info h-100">
-                                <h4 class="mb-4">Contact Information</h4>
-                                
-                                <div class="contact-item">
-                                    <i class="fas fa-map-marker-alt contact-icon"></i>
-                                    <div>
-                                        <h5>Address</h5>
-                                        <p>KEBUN BARU COURT 260B<br>ANG MO KIO STREET 21 #18-153<br>Singapore 562260</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <i class="fas fa-phone contact-icon"></i>
-                                    <div>
-                                        <h5>Phone</h5>
-                                        <p>+65 1234 5678</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope contact-icon"></i>
-                                    <div>
-                                        <h5>Email</h5>
-                                        <p>info@wewhtechs.com</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <i class="fas fa-clock contact-icon"></i>
-                                    <div>
-                                        <h5>Business Hours</h5>
-                                        <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 2pm</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="footer-title">WEWH TECHS</h3>
-                    <p>Driving innovation in search arbitrage and cross-border e-commerce through cutting-edge technology and data-driven insights.</p>
-                    <div class="social-icons mt-4">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <div class="footer-links">
-                        <a href="#home">Home</a>
-                        <a href="#services">Services</a>
-                        <a href="#about">About</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-3">Services</h5>
-                    <div class="footer-links">
-                        <a href="#">Search Arbitrage</a>
-                        <a href="#">Cross-border E-commerce</a>
-                        <a href="#">AI Analytics</a>
-                        <a href="#">Supply Chain</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="mb-3">Contact Info</h5>
-                    <div class="footer-links">
-                        <p><i class="fas fa-map-marker-alt me-2"></i> KEBUN BARU COURT 260B ANG MO KIO STREET 21 #18-153 Singapore 562260</p>
-                        <p><i class="fas fa-phone me-2"></i> +65 1234 5678</p>
-                        <p><i class="fas fa-envelope me-2"></i> info@wewhtechs.com</p>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="text-center">
-                <p>&copy; 2023 WEWH TECHS PTE. LTD. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = 'none';
+        // Modal Functions
+        function openModal() {
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            // Reset form and show form again
+            document.getElementById('contactForm').reset();
+            document.getElementById('contactForm').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
             }
         });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                address: document.getElementById('address').value
+            };
+            
+            // Here you would typically send the data to your server
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Optional: Auto close after 3 seconds
+            // setTimeout(closeModal, 3000);
+        });
+        
+        // Input validation
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '' && this.hasAttribute('required')) {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = '#e5e7eb';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#10b981';
                 }
             });
         });
